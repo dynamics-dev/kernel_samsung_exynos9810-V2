@@ -45,12 +45,12 @@ LLVM_DIS=llvm-dis
 "
 
 #your defconfig
-export exynos_defconfig=exynos9820-beyond1lte_defconfig
+export exynos_defconfig=exynos9810-starlte_defconfig
 export config_file="arch/arm64/configs/$exynos_defconfig"
 
 dtb_img() {
     sudo chmod +777 $dt_tool/* -R
-    $dt_tool/mkdtimg cfg_create "$work_dir/out/dt.img" "$dt_tool/exynos9820.cfg" -d "$work_dir/arch/arm64/boot/dts/exynos"
+    $dt_tool/mkdtimg cfg_create "$work_dir/out/dt.img" "$dt_tool/exynos9810.cfg" -d "$work_dir/arch/arm64/boot/dts/exynos"
 }
 
 packing() {
@@ -218,7 +218,7 @@ build_ksu(){
 
         dtb_img() {
             sudo chmod +777 $dt_tool/* -R
-            $dt_tool/mkdtimg cfg_create "$work_dir/out/dt.img" "$dt_tool/exynos9820.cfg" -d "$work_dir/arch/arm64/boot/dts/exynos"
+            $dt_tool/mkdtimg cfg_create "$work_dir/out/dt.img" "$dt_tool/exynos9810.cfg" -d "$work_dir/arch/arm64/boot/dts/exynos"
         }
 
         #check if the build succeed
